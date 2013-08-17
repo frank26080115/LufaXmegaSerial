@@ -21,4 +21,7 @@ void loop()
 	{
 		USBSerial.write(USBSerial.read());
 	}
+
+	USBSerial.task(); // call this often
+	// note: all of the other functions calls "task()" internally as well, so if you always call "available()", you are already calling "task()"
 }
